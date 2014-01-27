@@ -1,11 +1,15 @@
 require 'spec_helper'
 
-describe Llt::LatinBuilder do
+describe LLT::LatinBuilder do
+
   it 'should have a version number' do
-    Llt::LatinBuilder::VERSION.should_not be_nil
+    LLT::LatinBuilder::VERSION.should_not be_nil
   end
 
-  it 'should do something useful' do
-    false.should be_true
+  describe "#create_random_sentence" do
+    it 'returns an array with LLT::Form objects' do
+      LLT::LatinBuilder.new.create_random_sentence.should be_kind_of Array
+    end
   end
+
 end
