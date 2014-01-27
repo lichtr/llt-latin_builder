@@ -5,7 +5,7 @@ require 'llt/latin_builder/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "llt-latin_builder"
-  spec.version       = Llt::LatinBuilder::VERSION
+  spec.version       = LLT::LatinBuilder::VERSION
   spec.authors       = ["lichtr"]
   spec.email         = ["robert.lichtensteiner@gmail.com"]
   spec.description   = %q{TODO: Write a gem description}
