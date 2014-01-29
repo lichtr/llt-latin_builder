@@ -14,7 +14,6 @@ module LLT
         @sbj_args  = { type: :noun, stem: @sbj.stem, nominative: @sbj.nom, inflection_class: @sbj.inflectable_class, sexus: @sbj.sexus, options: @sbj_opts }
         @pred_args = { type: :praesens, stem: @pred.pr_stem, inflection_class: @pred.inflectable_class, options: @pred_opts }
         @obj_args  = { type: :noun, stem: @obj.stem, nominative: @sbj.nom, inflection_class: @obj.inflectable_class, sexus: @obj.sexus, options: @obj_opts }
-        require 'pry'; binding.pry
       end
 
       def build
@@ -22,6 +21,7 @@ module LLT
           LLT::FormBuilder.build(word)
         end.flatten
       end
+
     end
   end
 end
