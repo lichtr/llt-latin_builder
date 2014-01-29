@@ -2,11 +2,11 @@ module LLT
   class LatinBuilder
     module Helper
       require 'llt/db_handler/prometheus'
+      require_relative 'types'
 
-      [:noun, :verb].each do |meth|
-        require 'pry';binding.pry
+      LLT::LatinBuilder::Types.types.each do |meth|
         define_method meth do
-          const = "Db" + meth.to_s.capitalize
+          const = "Db" + meth.capitalize
           entries.select { |type| type.instance_of? StemDatabase.const_get(const.to_sym) }
         end
       end

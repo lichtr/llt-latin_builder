@@ -8,7 +8,7 @@ describe LLT::LatinBuilder do
 
   describe "#create_random_sentence" do
     it 'returns an array with LLT::Form objects' do
-      LLT::LatinBuilder.new.create_random_sentence.should be_kind_of Array
+      LLT::LatinBuilder.new.create_sentence(:random).should be_kind_of Array
     end
   end
 
