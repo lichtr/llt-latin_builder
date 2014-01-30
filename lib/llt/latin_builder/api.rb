@@ -1,17 +1,17 @@
 require 'sinatra'
 require 'llt/latin_builder'
-before do
-#  content_type :txt
-  @x = LLT::LatinBuilder.new
-  'Starting Latin Builder'
-end
-
-get '/create' do
-#    require 'pry'; binding.pry
-  result = String.new
-  @x.create_sentence(:random).build.each do |elem|
-     result << elem.to_s << ' '
+class Api < Sinatra::Base
+  configure do
+    set :lb,  LLT::LatinBuilder.new
   end
-  result
+
+  get '/create' do
+    sentence = settings.lb.create_sentence(:random).build
+    @sbj = sentence[0]
+    @obj = sentence[1]
+    @pred = sentence[2]
+    erb :create
+  end
 end
+Api.run!
 
